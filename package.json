@@ -25,7 +25,15 @@
     "lint:fix": "eslint . --fix",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "index": "docker run -it --env-file=.env -e \"CONFIG=$(cat docsearch.json | jq -r tostring)\" algolia/docsearch-scraper"
+    "index": "docker run -it --env-file=.env -e \"CONFIG=$(cat docsearch.json | jq -r tostring)\" algolia/docsearch-scraper",
+    "beautify": "node scripts/advanced-cover-generator.js",
+    "add-covers": "node scripts/generate-cover.js",
+    "fix-covers": "node scripts/fixed-cover-generator.js",
+    "new": "node scripts/create-article.js",
+    "new:quick": "node scripts/create-article.js",
+    "help": "node scripts/help.js",
+    "fix-mdx": "node scripts/fix-mdx-errors.js",
+    "add-meta": "node scripts/add-complete-frontmatter.js"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",

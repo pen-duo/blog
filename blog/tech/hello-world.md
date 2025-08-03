@@ -6,6 +6,7 @@ authors: default
 tags: [博客, 开始]
 keywords: [博客, hello world, 开始]
 description: 这是我的第一篇博客文章，记录我的技术学习之旅的开始。
+image: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80
 ---
 
 欢迎来到我的博客！这是我的第一篇文章。
@@ -53,7 +54,7 @@ function greet(name) {
 }
 
 console.log(greet('World'));
-```
+```bash
 
 ## 我的目标
 
@@ -75,4 +76,4 @@ console.log(greet('World'));
 
 ---
 
-*这篇文章是使用 Docusaurus 创建的示例文章，你可以参考这个格式来创建自己的博客文章。* 
+*这篇文章是使用 Docusaurus 创建的示例文章，你可以参考这个格式来创建自己的博客文章。*
