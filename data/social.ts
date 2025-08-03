@@ -7,29 +7,27 @@ export type Social = {
   cloudmusic?: string
   zhihu?: string
   email?: string
-  discord?: string
 }
 
 type SocialValue = {
-  href?: string
+  href: string
   title: string
   icon: string
   color: string
 }
 
 const social: Social = {
-  github: 'https://github.com/kuizuo',
-  x: 'https://twitter.com/kuizuo',
-  juejin: 'https://juejin.cn/user/1565318510545901',
-  wx: 'https://img.kuizuo.me/wechat.png',
-  // qq: 'https://img.kuizuo.me/qq.png',
-  // zhihu: 'https://www.zhihu.com/people/kuizuo',
-  cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
-  email: 'mailto:hi@kuizuo.me',
-  discord: 'https://discord.gg/M8cVcjDxkz',
+  github: 'https://github.com/pen-duo',
+  x: '',
+  juejin: '',
+  wx: '',
+  // qq: '',
+  // zhihu: '',
+  cloudmusic: '',
+  email: 'mailto:hijimmypeng@gmail.com',
 }
 
-const socialSet: Record<keyof Social | 'rss', SocialValue> = {
+const socialSet: Record<keyof Social, SocialValue> = {
   github: {
     href: social.github,
     title: 'GitHub',

@@ -40,17 +40,12 @@ function Name() {
         e.currentTarget.style.setProperty('--y', `${e.clientY}px`)
       }}
     >
-      <Translate id="homepage.hero.greet">你好! 我是</Translate>
-      <span
-        className={styles.name}
-        onMouseMove={(e) => {
-          const bounding = e.currentTarget.getBoundingClientRect()
-          e.currentTarget.style.setProperty('--mouse-x', `${bounding.x}px`)
-          e.currentTarget.style.setProperty('--mouse-y', `${bounding.y}px`)
-        }}
-      >
-        <Translate id="homepage.hero.name">愧怍</Translate>
-      </span>
+      <h1 className="hero__title">
+        <Translate id="homepage.hero.greet">你好! 我是</Translate>
+        <span className={styles.name}>
+          <Translate id="homepage.hero.name">Jimmy</Translate>
+        </span>
+      </h1>
       <span className="ml-1">👋</span>
     </motion.div>
   )

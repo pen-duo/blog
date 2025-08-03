@@ -2,15 +2,15 @@
   "name": "blog",
   "version": "3.0.0",
   "author": {
-    "url": "https://github.com/kuizuo",
-    "email": "hi@kuizuo.me",
-    "name": "codebangbang"
+    "url": "https://github.com/pen-duo",
+    "email": "hijimmypeng@gmail.com",
+    "name": "Jimmy"
   },
   "repository": {
-    "url": "https://github.com/kuizuo/blog",
+    "url": "https://github.com/pen-duo/blog",
     "type": "git"
   },
-  "homepage": "https://kuizuo.me",
+  "homepage": "",
   "license": "MIT",
   "scripts": {
     "docusaurus": "docusaurus",

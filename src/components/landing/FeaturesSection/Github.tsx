@@ -12,9 +12,9 @@ interface GithubProps {
 export default function Github({ className }: GithubProps) {
   const { isDarkTheme } = useColorMode()
 
-  const githubStatsUrl = (type: 'overview' | 'languages', isDark: boolean) =>
-    `https://raw.githubusercontent.com/kuizuo/github-stats/master/generated/${type}.svg#gh-${
-      isDark ? 'dark' : 'light'
+  const githubStatsUrl = (type: string) =>
+    `https://raw.githubusercontent.com/pen-duo/github-stats/master/generated/${type}.svg#gh-${
+      isDarkTheme ? 'dark' : 'light'
     }-mode-only`
 
   return (
@@ -28,19 +28,19 @@ export default function Github({ className }: GithubProps) {
           <ThemedImage
             alt="GitHub Overview Stats"
             sources={{
-              light: githubStatsUrl('overview', false),
-              dark: githubStatsUrl('overview', true),
+              light: githubStatsUrl('overview'),
+              dark: githubStatsUrl('overview'),
             }}
           />
           <ThemedImage
             alt="GitHub Languages Stats"
             sources={{
-              light: githubStatsUrl('languages', false),
-              dark: githubStatsUrl('languages', true),
+              light: githubStatsUrl('languages'),
+              dark: githubStatsUrl('languages'),
             }}
           />
         </div>
-        <GitHubCalendar username="kuizuo" blockSize={11} colorScheme={isDarkTheme ? 'dark' : 'light'} />
+        <GitHubCalendar username="pen-duo" blockSize={11} colorScheme={isDarkTheme ? 'dark' : 'light'} />
       </div>
     </div>
   )

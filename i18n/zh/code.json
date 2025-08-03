@@ -383,5 +383,9 @@
   "showcase.card.sourceLink": {
     "message": "源码",
     "description": "The label for the source link of a showcase card"
+  },
+  "homepage.hero.name": {
+    "message": "Jimmy",
+    "description": "The default label used for the homepage hero name"
   }
 }

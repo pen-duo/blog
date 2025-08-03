@@ -8,11 +8,12 @@ const beian = '闽ICP备2020017848号-3'
 const beian1 = '闽公网安备35021102000847号'
 
 const config: Config = {
-  title: '愧怍',
-  url: 'https://kuizuo.me',
-  baseUrl: '/',
+  title: "Jimmy's Blog",
+  tagline: 'Road To Coding',
   favicon: 'img/favicon.ico',
-  organizationName: 'kuizuo',
+  url: 'https://blog.kuizuo.me',
+  baseUrl: '/',
+  organizationName: 'pen-duo',
   projectName: 'blog',
   customFields: {
     bio: '道阻且长，行则将至',
@@ -28,15 +29,11 @@ const config: Config = {
     metadata: [
       {
         name: 'author',
-        content: '愧怍',
+        content: 'Jimmy',
       },
       {
         name: 'keywords',
-        content: 'blog, javascript, typescript, node, react, vue, web',
-      },
-      {
-        name: 'keywords',
-        content: '编程爱好者, Web开发者, 写过爬虫, 学过逆向, 主攻ts全栈',
+        content: 'blog, javascript, typescript, node, react, vue, web, 前端, 后端',
       },
     ],
     docs: {
@@ -45,8 +42,9 @@ const config: Config = {
       },
     },
     navbar: {
+      title: "Jimmy's Blog",
       logo: {
-        alt: '愧怍',
+        alt: "Jimmy's Blog",
         src: 'img/logo.webp',
         srcDark: 'img/logo.webp',
       },
@@ -116,13 +114,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `
-        <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
-        <p style="display: inline-flex; align-items: center;"><img style="height:20px;margin-right: 0.5rem;" src="/img/police.png" alt="police" height="20"/><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${
-          beian1.match(/\d+/)?.[0]
-        }" >${beian1}</a></p>
-        <p>Copyright © 2020 - ${new Date().getFullYear()} kuizuo. | Built with Docusaurus.</p>
-        `,
+      copyright: `Copyright © ${new Date().getFullYear()} Jimmy Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
     },
     algolia: {
       appId: 'GV6YN1ODMO',
@@ -172,12 +164,20 @@ const config: Config = {
       'classic',
       {
         docs: {
-          path: 'docs',
-          sidebarPath: 'sidebars.ts',
+          sidebarPath: './sidebars.ts',
+          editUrl: 'https://github.com/pen-duo/blog/tree/main',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+          breadcrumbs: false,
         },
-        blog: false,
+        blog: {
+          showReadingTime: true,
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          editUrl: 'https://github.com/pen-duo/blog/tree/main',
+        },
         theme: {
-          customCss: ['./src/css/custom.css', './src/css/tweet-theme.css'],
+          customCss: './src/css/custom.css',
         },
         sitemap: {
           priority: 0.5,
@@ -186,7 +186,6 @@ const config: Config = {
           trackingID: 'G-S4SD5NXWXF',
           anonymizeIP: true,
         },
-        debug: process.env.NODE_ENV === 'development',
       } satisfies Preset.Options,
     ],
   ],
@@ -295,10 +294,11 @@ Love what you do and do what you love.
     'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Semibold.min.css',
   ],
   i18n: {
-    defaultLocale: 'zh-CN',
-    locales: ['zh-CN'],
+    defaultLocale: 'zh',
+    locales: ['en', 'zh'],
   },
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
   future: {
     v4: true,
     experimental_faster: true,

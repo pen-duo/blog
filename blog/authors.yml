@@ -1,9 +1,6 @@
-kuizuo:
-  name: 愧怍
-  title: 全栈 typescripter / 刚毕业的学生
-  url: https://github.com/kuizuo
-  image_url: https://kuizuo.me/img/logo.png
-  email: hi@kuizuo.me
-  socials:
-    x: kuizuo
-    github: kuizuo
+default:
+  name: 'Jimmy'
+  title: '全栈开发者'
+  url: 'https://github.com/pen-duo'
+  email: 'hijimmypeng@gmail.com'
+  image_url: '/img/logo.webp'
