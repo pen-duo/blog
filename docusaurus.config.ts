@@ -61,6 +61,11 @@ const config: Config = {
             { label: '归档', to: 'blog/archive' },
           ],
         },
+        {
+          href: 'https://github.com/pen-duo',
+          label: 'GitHub',
+          position: 'right',
+        },
         // {
         //   type: 'localeDropdown',
         //   position: 'right',

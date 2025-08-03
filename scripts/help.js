@@ -50,6 +50,9 @@ console.log(`
 📖 详细文档：
   查看 scripts/ARTICLE_WORKFLOW.md 获取完整指南
 
+🖼️ 图片管理：
+  pnpm image-manager      - 快速打开图片管理页面
+
 🆘 遇到问题？
   1. 检查控制台错误信息
   2. 运行 pnpm fix-mdx 修复文章格式
