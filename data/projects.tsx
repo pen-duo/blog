@@ -16,6 +16,14 @@ export const projects: Project[] = [
     tags: ['ai', 'product', 'personal'],
     type: 'web',
   },
+  {
+    title: '多语言表格转JSON工具',
+    description: '多语言表格转JSON工具，支持复制表格内容进行自动转换和导入JSON，简化手动接入多语言成本',
+    preview: '/img/project/auto-transform-json.png',
+    website: 'https://codesandbox.io/p/sandbox/sjppvn',
+    tags: ['opensource'],
+    type: 'tool',
+  },
 ]
 
 export type Tag = {
@@ -24,9 +32,9 @@ export type Tag = {
   color: string
 }
 
-export type TagType = 'favorite' | 'opensource' | 'product' | 'design' | 'large' | 'personal' | 'ai'
+export type TagType = 'favorite' | 'opensource' | 'product' | 'design' | 'large' | 'personal' | 'ai' | 'tool'
 
-export type ProjectType = 'web' | 'app' | 'commerce' | 'personal' | 'toy' | 'other'
+export type ProjectType = 'web' | 'app' | 'commerce' | 'personal' | 'toy' | 'tool' | 'other'
 
 export const projectTypeMap = {
   web: '🖥️ 网站',
@@ -35,6 +43,7 @@ export const projectTypeMap = {
   personal: '👨‍💻 个人',
   toy: '🔫 玩具',
   other: '🗃️ 其他',
+  tool: '🔧 工具',
 }
 
 export type Project = {
@@ -58,6 +67,11 @@ export const Tags: Record<TagType, Tag> = {
     description: '开源项目可以提供灵感!',
     color: '#39ca30',
   },
+  tool: {
+    label: '工具',
+    description: '工具项目，简化工作流程，提高工作效率',
+    color: '#39ca30',
+  },
   product: {
     label: '产品',
     description: '与产品相关的项目!',
@@ -76,6 +90,11 @@ export const Tags: Record<TagType, Tag> = {
   personal: {
     label: '个人',
     description: '个人项目',
+    color: '#12affa',
+  },
+  ai: {
+    label: 'AI',
+    description: 'AI项目',
     color: '#12affa',
   },
 }
