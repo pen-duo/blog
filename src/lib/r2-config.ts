@@ -12,6 +12,13 @@ export const R2_CONFIG = {
   customDomain: process.env.R2_CUSTOM_DOMAIN || '', // 如: https://images.yourdomain.com
 }
 
+// 环境信息
+export const ENV_INFO = {
+  isDevelopment: process.env.NODE_ENV === 'development',
+  isProduction: process.env.NODE_ENV === 'production',
+  nodeEnv: process.env.NODE_ENV || 'development',
+}
+
 // 创建S3客户端
 export const s3Client = new S3Client({
   endpoint: R2_CONFIG.endpoint,

@@ -15,9 +15,12 @@ console.log(`
   pnpm add-meta              - 为所有文章添加完整元信息
 
 🚀 开发预览：
-  pnpm start                 - 启动开发服务器
-  pnpm build                 - 构建生产版本
-  pnpm serve                 - 预览构建结果
+  pnpm start                 - 启动开发服务器 (NODE_ENV=development)
+  pnpm start:prod           - 启动生产服务器 (NODE_ENV=production)
+  pnpm build                - 构建生产版本 (NODE_ENV=production)
+  pnpm build:dev            - 构建开发版本 (NODE_ENV=development)
+  pnpm serve                - 预览生产版本 (NODE_ENV=production)
+  pnpm serve:dev            - 预览开发版本 (NODE_ENV=development)
 
 📂 文章分类：
   develop   - 开发技术（JavaScript、React、Vue等）
