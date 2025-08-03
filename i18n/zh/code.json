@@ -387,5 +387,17 @@
   "homepage.hero.name": {
     "message": "Jimmy",
     "description": "The default label used for the homepage hero name"
+  },
+  "homepage.feature.developer": {
+    "message": "字节跳动前端专家",
+    "description": "Feature title for ByteDance frontend expert"
+  },
+  "homepage.feature.web3": {
+    "message": "Web3 金融交易专家",
+    "description": "Feature title for Web3 financial trading expert"
+  },
+  "homepage.feature.ai": {
+    "message": "AI 产品独立开发者",
+    "description": "Feature title for AI product independent developer"
   }
 }

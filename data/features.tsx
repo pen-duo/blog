@@ -19,7 +19,7 @@ const FEATURES: FeatureItem[] = [
     }),
     description: (
       <Translate>
-        作为一名 TypeScript 全栈工程师，秉着能用 TS 绝不用 JS 的原则，为项目提供类型安全的保障，提高代码质量和开发效率。
+        在字节跳动工作3年4个月，负责抖音CSR部门跨端开发。深度掌握TypeScript、React技术栈，在hybrid app开发领域有着丰富的实战经验和深入研究。
       </Translate>
     ),
     header: <WebDeveloperSvg className="h-auto w-full" height={150} role="img" />,
@@ -27,27 +27,29 @@ const FEATURES: FeatureItem[] = [
   },
   {
     title: translate({
-      id: 'homepage.feature.spider',
-      message: '会点逆向 & 爬虫',
+      id: 'homepage.feature.web3',
+      message: '懂点Web3 & 金融交易',
     }),
     description: (
       <Translate>
-        作为一名曾学习与实践逆向工程两年半的开发者，对于逆向工程有着浓厚的兴趣，同时造就了超凡的阅读代码能力。没有看不懂的代码，只有不想看的代码。
+        在香港知名上市Web3交易所担任高级前端工程师，拥有丰富的Web3金融交易系统开发经验。懂点区块链技术、DeFi协议和加密货币交易系统架构设计。
       </Translate>
     ),
     header: <SpiderSvg className="h-auto w-full" height={150} role="img" />,
+    icon: <Icon icon="cryptocurrency:btc" className="size-4 text-neutral-500" />,
   },
   {
     title: translate({
-      id: 'homepage.feature.enthusiast',
-      message: '开源爱好者',
+      id: 'homepage.feature.ai',
+      message: 'AI 产品独立开发者',
     }),
     description: (
       <Translate>
-        作为一名开源爱好者，积极参与开源社区，为开源项目贡献代码，希望有生之年能够构建出一个知名的开源项目。
+        拥有丰富的AI产品独立开发经验，从0到1构建多个AI应用产品。深度理解AI技术栈，擅长将前沿AI技术转化为实用的商业产品，具备全栈产品开发能力。
       </Translate>
     ),
     header: <OpenSourceSvg className="h-auto w-full" height={150} role="img" />,
+    icon: <Icon icon="simple-icons:openai" className="size-4 text-neutral-500" />,
   },
 ]
 

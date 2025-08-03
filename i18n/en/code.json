@@ -4,7 +4,7 @@
     "description": "hero greet"
   },
   "homepage.hero.name": {
-    "message": "Kuizuo",
+    "message": "Jimmy",
     "description": "hero name"
   },
   "homepage.hero.text": {
@@ -27,13 +27,13 @@
     "message": "Feature"
   },
   "homepage.feature.developer": {
-    "message": "Typescript Developer"
+    "message": "ByteDance Frontend Expert"
   },
-  "homepage.feature.spider": {
-    "message": "Know a little Reverse"
+  "homepage.feature.web3": {
+    "message": "Web3 Financial Trading Expert"
   },
-  "homepage.feature.enthusiast": {
-    "message": "Open source enthusiast"
+  "homepage.feature.ai": {
+    "message": "AI Product Independent Developer"
   },
   "theme.blog.archive.posts.total": {
     "message": "Total {total} posts"
