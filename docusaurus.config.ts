@@ -8,7 +8,7 @@ const beian = '闽ICP备2020017848号-3'
 const beian1 = '闽公网安备35021102000847号'
 
 const config: Config = {
-  title: "Jimmy's Blog",
+  title: 'Jimmy\'s Blog',
   tagline: 'Road To Coding',
   favicon: 'img/favicon.ico',
   url: 'https://blog.kuizuo.me',
@@ -42,9 +42,9 @@ const config: Config = {
       },
     },
     navbar: {
-      title: "Jimmy's Blog",
+      title: 'Jimmy\'s Blog',
       logo: {
-        alt: "Jimmy's Blog",
+        alt: 'Jimmy\'s Blog',
         src: 'img/logo.webp',
         srcDark: 'img/logo.webp',
       },
@@ -59,7 +59,6 @@ const config: Config = {
           position: 'right',
           items: [
             { label: '归档', to: 'blog/archive' },
-            { label: '主题魔改', to: 'docs/docusaurus-guides' },
           ],
         },
         // {
@@ -77,39 +76,23 @@ const config: Config = {
             { label: '博客', to: 'blog' },
             { label: '归档', to: 'blog/archive' },
             { label: '实战项目', to: 'project' },
-            { label: '前端示例', to: 'https://example.kuizuo.me' },
           ],
         },
         {
           title: '社交媒体',
           items: [
             { label: '关于我', to: '/about' },
-            { label: 'GitHub', href: social.github.href },
-            { label: 'Twitter', href: social.x.href },
-            { label: '掘金', href: social.juejin.href },
-            { label: 'Discord', href: social.discord.href },
-          ],
-        },
-        {
-          title: '网站',
-          items: [
-            { label: 'js反混淆', to: 'https://js-deobfuscator.kuizuo.me' },
-            { label: 'cyberChef', to: 'https://gchq.github.io/CyberChef' },
-            { label: 'api服务', to: 'https://api.kuizuo.me' },
-            { label: '便民服务', to: 'https://service.kuizuo.me' },
-            { label: '站点监控', to: 'https://uptime.kuizuo.me' },
+            { label: 'GitHub', href: 'https://github.com/pen-duo' },
           ],
         },
         {
           title: '更多',
           items: [
-            { label: '友链', position: 'right', to: 'friends' },
+            { label: '友链', to: 'friends' },
             {
-              html: `
-                <a href="https://docusaurus.io" target="_blank" rel="noreferrer noopener">
-                  <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
-                </a>
-                `,
+              html: `<a href="https://docusaurus.io" target="_blank" rel="noreferrer noopener">
+                <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
+              </a>`,
             },
           ],
         },
@@ -163,19 +146,8 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/pen-duo/blog/tree/main',
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          breadcrumbs: false,
-        },
-        blog: {
-          showReadingTime: true,
-          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
-          editUrl: 'https://github.com/pen-duo/blog/tree/main',
-        },
+        docs: false, // 禁用文档功能
+        blog: false, // 禁用preset中的博客插件，使用自定义的
         theme: {
           customCss: './src/css/custom.css',
         },

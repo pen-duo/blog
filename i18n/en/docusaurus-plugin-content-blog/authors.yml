@@ -1,5 +1,6 @@
-kuizuo:
-  name: Kuizuo
-  title: ts full stack / Student
-  url: https://github.com/kuizuo
+default:
+  name: Jimmy
+  title: Full Stack Developer
+  url: https://github.com/pen-duo
+  email: hijimmypeng@gmail.com
   image_url: /img/logo.webp
