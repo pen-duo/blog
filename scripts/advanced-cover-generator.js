@@ -65,6 +65,7 @@ function selectImageByTags(tags, category = 'tech') {
     project: source.collections.design,
     lifestyle: source.collections.lifestyle,
     reference: source.collections.book,
+    finance: source.collections.default,
   }
 
   const imageId = categoryImages[category] || source.collections.default
@@ -152,6 +153,7 @@ function getCategoryTags(category) {
     project: ['项目', '作品', '展示'],
     lifestyle: ['生活', '感悟', '分享'],
     reference: ['总结', '回顾', '思考'],
+    finance: ['金融', '理财', '投资'],
   }
 
   return categoryTags[category] || ['技术', '分享']

@@ -28,7 +28,8 @@ class FrontmatterEnhancer {
       'program': ['编程实践', '架构', 'API', '数据库', '框架'],
       'project': ['项目分享', '开源项目', 'github', '产品设计'],
       'lifestyle': ['生活感悟', '思考', '成长', '经验分享', '职场'],
-      'reference': ['年度总结', '回顾', '规划', '目标', '成长轨迹']
+      'reference': ['年度总结', '回顾', '规划', '目标', '成长轨迹'],
+      'finance': ['投资理财', '股票', '基金', '保险', '财务规划', '经济学', '金融知识']
     };
     return tagMap[category] || ['技术分享', '学习', '经验'];
   }
@@ -48,6 +49,7 @@ class FrontmatterEnhancer {
       project: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
       lifestyle: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
       reference: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+      finance: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
       
       // 特殊主题
       bytedance: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
@@ -121,7 +123,8 @@ class FrontmatterEnhancer {
         'program': '编程实践',
         'project': '项目分享',
         'lifestyle': '生活感悟',
-        'reference': '年度总结'
+        'reference': '年度总结',
+        'finance': '金融知识'
       };
       description = `${title} - ${categoryNames[category] || '技术'}相关的经验分享和深度思考。`;
     }

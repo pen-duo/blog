@@ -9,6 +9,7 @@ const CATEGORIES = {
   project: '项目分享',
   lifestyle: '生活感悟',
   reference: '年度总结',
+  finance: '金融知识',
 }
 
 const TAGS_SUGGESTIONS = {
@@ -17,6 +18,7 @@ const TAGS_SUGGESTIONS = {
   project: ['开源项目', '个人项目', '团队协作', 'github', '产品设计', 'ui设计'],
   lifestyle: ['思考', '成长', '学习', '工作', '生活', '感悟', '经验分享'],
   reference: ['年终总结', '回顾', '规划', '目标', '成长轨迹'],
+  finance: ['web3', 'defi', 'nft', 'crypto', '区块链', '金融知识'],
 }
 
 const COVER_IMAGES = {
@@ -82,6 +84,7 @@ function selectCoverImage(tags, category) {
     project: 'react',
     lifestyle: 'lifestyle',
     reference: 'default',
+    finance: 'default',
   }
 
   const mappedCategory = categoryMapping[category] || 'default'
@@ -160,7 +163,7 @@ async function createArticleInteractive() {
       console.log(`  ${key} - ${value}`)
     })
 
-    const category = await askQuestion(rl, '\n请选择文章分类 (develop/program/project/lifestyle/reference): ')
+    const category = await askQuestion(rl, '\n请选择文章分类 (develop/program/project/lifestyle/reference/finance): ')
 
     if (!CATEGORIES[category]) {
       console.log('❌ 无效的分类，请重新运行脚本')
