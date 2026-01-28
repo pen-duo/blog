@@ -13,7 +13,7 @@ Docker 是现代软件开发中不可或缺的容器化平台。本文将详细�
 
 <!-- truncate -->
 
-## 🚀 🚀 🚀 安装 Docker
+## 🚀 🚀 🚀 🚀 安装 Docker
 
 ### 1. 下载 Docker Desktop
 
@@ -72,7 +72,7 @@ nano ~/.docker/daemon.json
 }
 ```bash
 
-## 💻 💻 📋 Docker 常用命令
+## 💻 💻 💻 📋 Docker 常用命令
 
 ### 🆘 帮助命令
 
@@ -278,7 +278,7 @@ docker cp 容器id:容器内路径 主机路径
 docker cp 主机路径 容器id:容器内路径
 ```bash
 
-## 💡 💡 💡 实用技巧
+## 💡 💡 💡 💡 实用技巧
 
 ### 1. 容器后台运行的注意事项
 
@@ -315,7 +315,7 @@ docker run -d --memory="500m" --cpus="1.0" nginx
 docker run -d --memory="500m" --memory-swap="1g" nginx
 ```bash
 
-## 🎯 🎯 🎯 总结
+## 🎯 🎯 🎯 🎯 总结
 
 本文介绍了Docker的基础安装配置和常用命令，掌握这些命令可以帮助你：
 

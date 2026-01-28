@@ -59,11 +59,11 @@ tips: 不过作为独立开发者，我们的核心主题都是**干中学**，�
 *   关键词检索：通过[semrush](https://www.semrush.com/)可以验证关键词在google上面的被录入的数量，竞争的激烈程度，可以辅助判断这个项目是否值得去做，比如类似于ai english translate这种就不值得，因为搜索引擎前列的几乎都是大厂，个人开发者在这种超级红海里面没有机会。
 *   网站流量分析：通过[similarWeb](https://www.similarweb.com/zh/)可以去分析竞品网站的流量、排名、关键词等数据，对比多个网站的表现，找出竞争优势。原理和上面是类似的。
 *   谷歌搜索趋势：通过[谷歌关键词搜索趋势](https://trends.google.com/)可以去分析该关键词在整体谷歌、或者目标地区的被搜索频率，查看目标地区对相关产品的需求程度，并且辅助判断产品是否为周期性产品。
-```
+```bash
 
 ```javascript
 以上的方法可以侧面去判断一个需求是否值得去做，我这里只粗略的提一些理论上的知识，尽可能的将我学到的分享出来，实战方面可能偏少，因为我也正在这方面学习，共勉。
-```
+```bash
 
 ## 技术分析
 
@@ -218,7 +218,7 @@ import { getSupabaseClient } from './db';
         return data;
       }
     }
-```
+```bash
 
 就上面这些代码的编写过程就起码省去了一个非后端大半天的功夫，只是需求描述的足够清楚，AI还是牛的啊。
 
@@ -251,7 +251,7 @@ import { getSupabaseClient } from './db';
             },
         ],
     });
-```
+```bash
 
 3.  通过Vscode的REST Client插件进行本地调用。
 
@@ -324,7 +324,7 @@ const completion = await client.chat.completions.create({
         },
     ],
 });
-```
+```bash
 
 但是deepseek有个很大的问题是速度太慢了，也可能其他模式比较快，但是deepseek-chat我整体体验下来还是太慢了，我体感上起码要一分钟左右，这完全不可接受，原因应该是它背后走的是推理生成，而整个推理过程是比较耗时的，所以为了用户体验我最后切换成了通义千问。
 
@@ -336,7 +336,7 @@ const completion = await client.chat.completions.create({
 
 对上面的大模型集成过程进行总结一下，我事后反思觉得我在这个过程中犯了一个很严重的错误，就是没有清楚的明白自己想要的是什么类型的模型的情况下就去盲目的接入各种大模型了，导致浪费了很多时间。如果我能想清楚自己需要的就是一个速度快、成本低、适合简单任何的模型的话，我相信应该不会走这么多的弯路，请大家一定要吸取我这个教训。
 
-## 部署方案
+## 🚀 部署方案
 
 ![Snipaste\_2025-03-21\_19-01-37.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b3c5ca505be24c7aa6df8fe47faeb415~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgY29kZWJhbmdiYW5n:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMTU2NTMxNjg0NDM2Mzg5NiJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1754814518&x-orig-sign=b9NTjCYdUSG271j5sbl%2BfotNUUg%3D)
 
@@ -359,12 +359,12 @@ const completion = await client.chat.completions.create({
 2.  选择你项目用的技术栈，我的nextjs，然后点击deploy。
 ```javascript
 ![Snipaste\_2025-03-21\_19-08-16.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/1091b05a5dd04aafa09a8be1d5e0e453~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgY29kZWJhbmdiYW5n:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMTU2NTMxNjg0NDM2Mzg5NiJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1754814518&x-orig-sign=ksxhBkufPEsrjbSXIojj9bFIHyo%3D)
-```
+```bash
 
 3.  然后你的项目就会开始部署了，页面大概张这样，部署成功之后，红色标记的部分就是vercel默认分配的域名，你可以再互联网上进行访问了。
 ```javascript
 ![Snipaste\_2025-03-21\_19-08-37.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/6963c63c80ff4710acd2e00847d91bd6~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAgY29kZWJhbmdiYW5n:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiMTU2NTMxNjg0NDM2Mzg5NiJ9&rk3s=f64ab15b&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1754814518&x-orig-sign=8ZQq83y223TSldi%2FGj%2BNprGy6oY%3D)
-```
+```bash
 
 4.  如果你想要去绑定自己的域名的话，那么要先拥有一个域名，我这里用的是[腾讯云](https://buy.cloud.tencent.com/domain/buy?domain=aitmeline\&tlds=.com\&from=dnspodEntrance&_t=1742555577941\&position=search-input),选择一个你觉得合适的域名进行购买，这里需要实名认证，实名后便可以成功购买了。
 
@@ -388,11 +388,11 @@ const completion = await client.chat.completions.create({
 *   **子域名（如 `blog.example.com`）** ：\
 ```javascript
 添加 **CNAME 记录**，值为 `cname.vercel-dns.com`8。
-```
+```bash
 *   **根域名（如 `example.com`）** ：\
 ```javascript
 添加 **A 记录**，指向 Vercel 的 IP 地址（如 `76.76.21.21`）58。
-```
+```bash
 
 国内访问优化配置
 
@@ -407,7 +407,7 @@ const completion = await client.chat.completions.create({
 
 总结：这里比较繁琐，我直接将deepseek生成的答案贴过来了，如果中间遇到问题可以先询问ai,或者去[stackoverflow](https://stackoverflow.com/)上进行相关查询，你遇到的90%的问题在上面都能找到解答。
 
-## 总结
+## 🎯 总结
 
 至此一个项目就大致就成功上线，当然后续还有很多工作要做，比如不断地去做seo、在各种平台进行分享，思考如何进行商业化运营，这些也是我目前正在学习的领域，后续有机会再和大家进行分享吧。这里聊下我未来对这个项目的规划，我这里简单列了一下。
 

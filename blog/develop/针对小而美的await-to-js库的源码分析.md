@@ -8,6 +8,7 @@ keywords: [针对小而美的, await, to, js, 库的源码分析, 开发技术, 
 description: 本期给大家带来的是axios中的工具函数库,里面总共有30+个或用于判断类型,或用于处理字符串,或为了兼容性而进行了二次封装的工具函数。
 image: https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80
 ---
+
 ## 前言
 本期给大家带来的是axios中的工具函数库,里面总共有30+个或用于判断类型,或用于处理字符串,或为了兼容性而进行了二次封装的工具函数。
 
@@ -22,18 +23,18 @@ image: https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0
 
 阅读本文，你将学到：
 
-```
+```bash
 1、javascript、nodejs调试技巧及调试工具；
 2、如何学习调试axios源码；
 3、如何学习优秀开源项目的代码，应用到自己的项目；
 4、axios源码中实用的工具函数；
-```
+```bash
 
 而你需要
 
-```
+```bash
 1、javascript基础知识；
-```
+```bash
 
 关注我不迷路: 
 
@@ -49,7 +50,7 @@ vx: codebangbang。
 [axios/utils](https://github.com/axios/axios/blob/master/lib/utils.js)
 
 以下是我仓库中直接拷贝过来的源码,懒得同学可以直接看我的分析。
-```
+```bash
 'use strict';
 
 var bind = require('./helpers/bind');
@@ -319,7 +320,7 @@ function forEach(obj, fn) {
  * ```js
  * var result = merge({foo: 123}, {foo: 456});
  * console.log(result.foo); // outputs 456
- * ```
+ * ```bash
  *
  * @param {Object} obj1 Object to merge
  * @returns {Object} Result of all merge properties
@@ -400,7 +401,7 @@ module.exports = {
   trim: trim,
   stripBOM: stripBOM
 };
-```
+```bash
 
 ## 源码分类
 ### 第一类: 类型判断
@@ -414,7 +415,7 @@ module.exports = {
 基本数据类型:undefined,null,string,number,boolean,bigInt,symbol.
 
 axios/utils是这样处理的
-```
+```bash
 function isUndefined(val) {
   return typeof val === 'undefined';
 }
@@ -426,7 +427,7 @@ function isString(val) {
 function isNumber(val) {
   return typeof val === 'number';
 }
-```
+```bash
 
 仓库中只对这三种基本数据类型进行了类型判断,但其实都是用的是同一套函数,用的都是typeof这个方法。
 
@@ -439,7 +440,7 @@ function isNumber(val) {
 复杂数据类型其实就是指object,所以除了上面那几个基本数据类型,其余的都是复杂数据类型。
 
 axios/utils是这样处理复杂类型的
-```
+```bash
 function isArrayBuffer(val) {
   return Objet.prototype.toString.call(val) === '[object ArrayBuffer]';
 }
@@ -474,7 +475,7 @@ function isURLSearchParams(val) {
   return Objet.prototype.toString.call(val) === '[object URLSearchParams]';
 }
 
-```
+```bash
 
 仓库中只对这8种复杂数据类型进行了类型判断,但其实都是用的是同一套函数,用的都是Objet.prototype.toString.call这个方法。
 
@@ -483,24 +484,24 @@ function isURLSearchParams(val) {
 
 Object
 
-```
+```bash
 function isObject(val) {
   return val !== null && typeof val === 'object'; // 只要排除null的影响,就可以用typeof来区分是否是对象了
 }
-```
+```bash
 
 Array
-```
+```bash
  function isArray(val) {
   return Array.isArray(val); // 用的是ES6新出的方法isArray
 }
-```
+```bash
 
 其实无论是Object还是Array我们都可以用`Object.prototype.toString.call`来判断。
 
 我们可以重写一下这两个函数
 
-```
+```bash
 function isObject(val) {
   return Objet.prototype.toString.call(val) === '[object Object]';
 }
@@ -508,14 +509,14 @@ function isObject(val) {
 function isArray(val) {
   return Objet.prototype.toString.call(val) === '[object Array]';
 }
-```
+```bash
 
 效果是一样的哦。
 
 而接下来的三个就不一样了。
 
 Buffer
-```
+```bash
 
 function isBuffer(val) {
   return val !== null // 判断不是 null
@@ -525,7 +526,7 @@ function isBuffer(val) {
           && typeof val.constructor.isBuffer === 'function' 最后通过自身的`isBuffer`方法判断
           && val.constructor.isBuffer(val);同上
 }
-```
+```bash
 
 这里简单介绍一下Buffer
 
@@ -539,13 +540,13 @@ JavaScript 语言自身只有字符串数据类型，没有二进制数据类型
 ArrayBufferView
 
 Stream
-```
+```bash
  function isStream(val) {
   return isObject(val) && isFunction(val.pipe); // isObjce和isFunction我们在上面都有提到哦
 }
-```
+```bash
 ArrayBufferView
-```
+```bash
  function isArrayBufferView(val) {
   var result;
   if ((typeof ArrayBuffer !== 'undefined') && (ArrayBuffer.isView)) {
@@ -555,20 +556,20 @@ ArrayBufferView
   }
   return result;
 }
-```
+```bash
 
 说实话，我不知道这个类型到底是干嘛,自己也比较懒,这个函数大家有兴趣自己了解一下哈。
 
 ### 第二类: 字符串处理
 trim作用:去除字符串两边空格
-```
+```bash
 function trim(str) {
   return str.trim ? str.trim() : str.replace(/^\s+|\s+$/g, '');// 要是有trim方法直接用否则用正则表达式处理
 }
-```
+```bash
 ### 第三类: 二次封装(为了兼容性)
 forEach: 将forEach和for..in...封装到一个函数中
-```
+```bash
 function forEach(obj, fn) {
   if (obj === null || typeof obj === 'undefined') { // 如果传入的obj是空或undefined,啥也不返回
     return;
@@ -590,11 +591,11 @@ function forEach(obj, fn) {
     }
   }
 }
-```
+```bash
 
 ## 封装一个typeFn函数
 基于上面的种种分析,我们可以自己来封装一个type函数用于判断数据类型。
-```
+```bash
 const typeFn = (val) => {
 
 let typeListObj = {};
@@ -617,11 +618,11 @@ return  typeListObj[Object.prototype.toString.call(val)] || "object"
 
 };
 
-```
+```bash
 
 typeFn业务逻辑分析如下
 - 首先将需要进行判断的所有复杂类型的字符串放入一个typeList数组中,并利用这个数组封装一个typeListObj对象,typeListObj对象的key为[object 大写数据类型], value为小写数据类型,最后这个typeListObj对象长这样
- ```
+ ```bash
  {
     [object Number]: "number"
     [object Boolean]: "boolean",
@@ -635,13 +636,13 @@ typeFn业务逻辑分析如下
     [object Date]: "date",
     [object Error]: "error"
 }
-```
+```bash
 - 对于传入的数据判断是否为空,如果是,直接返回"null"
 - 如果不是,再判断是否是基本数据类型,是的话直接用typeof判断并返回
 - 再然后就是复杂数据类型了,针对复杂数据类型用`Object.prototype.toString.call(val)`,将得到的结果再去我们前面的typeListObj对象中进行匹配,找出相应的数据类型,如果没找到,默认返回object
 
 
-## 总结
+## 🎯 总结
 
 在日后的类型判断中你可以记住一下几句话
 
@@ -652,5 +653,3 @@ typeFn业务逻辑分析如下
 -   最好的类型判断的方法是封装一个函数,基本数据类型用typeof判断,引用数据类型用Object.prototype.toString判断。
 
 -   instanceof主要用于判断实例与构造函数的从属关系
-
-
