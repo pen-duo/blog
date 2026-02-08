@@ -19,7 +19,7 @@ image: https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0
 
 ---
 
-## 💻 一、Nest CLI 常用命令
+## 一、Nest CLI 常用命令
 
 ### 项目相关
 
@@ -47,7 +47,7 @@ nest g resource post --no-spec # 不生成测试文件
 nest g module auth
 nest g controller auth
 nest g service auth
-```bash
+```
 
 ### 其他
 
@@ -92,7 +92,7 @@ class B_WithoutDI {
     this.c = new C('2');
   }
 }
-```bash
+```
 
 ### 有 DI：依赖由外部注入（解耦）
 
@@ -123,7 +123,7 @@ class B_WithDI {
     this.c = container.get<C>('c');
   }
 }
-```bash
+```
 
 **小结：**
 
@@ -170,7 +170,7 @@ class Dog {
 
 const x = new Dog();
 x.getName('a', 1);
-```bash
+```
 
 ### 方法装饰器常见用法：包装原方法
 
@@ -196,7 +196,7 @@ class Service {
 
 const s = new Service();
 s.greet('Nest'); // 控制台: 调用 greet ['Nest']，返回值: 'Hello, Nest'
-```bash
+```
 
 ### 类装饰器（ClassDecorator）
 
@@ -209,7 +209,7 @@ function Component(constructor: new (...args: unknown[]) => object) {
 
 @Component
 class App {}
-```bash
+```
 
 ### 属性装饰器（PropertyDecorator）
 
@@ -226,7 +226,7 @@ class Config {
   @Default('dev')
   env!: string;
 }
-```bash
+```
 
 ### 和 Nest 的对应关系
 
@@ -241,8 +241,10 @@ Nest 里大量用装饰器做「声明式」配置，例如：
 
 ---
 
-## 🎯 🎯 总结
+## 🎯 总结
 
 - **Nest CLI**：`nest g resource/module/controller/service` 等可快速生成骨架代码。
 - **IoC/DI**：把依赖的创建与保管交给容器，类只声明「需要什么」，实现解耦与易测。
 - **装饰器**：TS 的类/方法/属性/参数装饰器在 Nest 中对应 `@Controller`、`@Get`、`@Injectable`、`@Body` 等，用于声明式配置。
+
+下一期可以继续写 Nest 的模块、控制器与服务的实际用法。
