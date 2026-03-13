@@ -9,8 +9,13 @@ async function blogPluginEnhanced(context, options) {
   return {
     ...blogPluginInstance,
     async contentLoaded({ content, allContent, actions }) {
-      // Sort blog with sticky
-      content.blogPosts.sort((a, b) => (b.metadata.frontMatter.sticky || 0) - (a.metadata.frontMatter.sticky || 0))
+      // Sort blog: first by sticky (higher first), then by date (newer first)，便于用 date 控制系列阅读顺序
+      content.blogPosts.sort((a, b) => {
+        const stickyA = a.metadata.frontMatter.sticky ?? 0
+        const stickyB = b.metadata.frontMatter.sticky ?? 0
+        if (stickyB !== stickyA) return stickyB - stickyA
+        return new Date(b.metadata.date) - new Date(a.metadata.date)
+      })
 
       // Group posts by postsPerPage
       const groupedPosts = Array.from({ length: Math.ceil(content.blogPosts.length / postsPerPage) }, (_, i) => ({
