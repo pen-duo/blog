@@ -78,6 +78,28 @@ image: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0
 
 **项目中的用法**：LoginGuard 在 aaa 接口上做登录检查（当前写死 `return false` 会拦掉请求）。
 
+**全局 Guard 的两种注册方式**
+
+全局 Guard 可以有两种写法，区别在于「谁创建实例、能不能用依赖注入」：
+
+| 对比项 | 方式 1：`app.useGlobalGuards(new LoginGuard())`（main.ts） | 方式 2：`APP_GUARD` + `useClass: LoginGuard`（app.module.ts） |
+|--------|------------------------------------------------------------|----------------------------------------------------------------|
+| 创建方式 | 自己在 `main` 里 `new LoginGuard()`，**不经过 Nest 的 DI 容器** | 由 Nest 按 provider 创建实例，**走完整 DI 流程** |
+| 依赖注入 | Guard 构造函数里**不能**通过 `@Injectable()` 注入其他服务，否则要自己传或拿不到 | 可以在 LoginGuard 构造函数里**注入任意 provider**（如 ConfigService、其他 Service），Nest 会自动注入 |
+| 适用场景 | Guard 无依赖、或只做简单判断时可以用 | Guard 需要依赖其他服务、配置、数据库等时，用这种方式 |
+| 注册时机 | 在 `bootstrap()` 里、应用创建之后立刻注册 | 在模块初始化时注册，和别的 provider 一起解析依赖 |
+
+**对比小结**：需要依赖注入（例如 Guard 里要用别的 Service）→ 用 **APP_GUARD + useClass**。无依赖、简单逻辑 → 两种都行，但 APP_GUARD 更符合 Nest 的写法，也方便以后在 Guard 里加依赖。**若两种都写，同一个 Guard 会注册两次，请求时就会跑两遍**，所以只保留一种即可。
+
+**通俗理解：providers 和 DI 的关系**
+
+你理解得对，可以概括成两句话：
+
+- **凡是在 `providers` 里注册的类（包括 `APP_GUARD`、`APP_PIPE` 等用的 `useClass: XxxGuard`），都会由 Nest 的 DI 容器来创建实例**，创建时会解析构造函数里的依赖，自动注入该模块能拿到的其他 provider。
+- **「能拿到」的前提是：要么在同一个模块的 `providers` 里，要么在其它模块的 `exports` 里且当前模块已经 `imports` 了那个模块**。所以只要模块之间通过 `imports` / `exports` 建立好关系，Guard、Pipe、Interceptor 等都可以在构造函数里注入任意「已导出」的服务，互相引用。
+
+因此：用 **APP_GUARD + useClass** 注册的 Guard，和普通 Service 一样会进 DI，可以放心在 Guard 里写 `constructor(private config: ConfigService)` 等，Nest 会自动注入；用 `main.ts` 里 `useGlobalGuards(new LoginGuard())` 时，Guard 是自己在外面 new 的，不经过 DI，就没办法自动注入其他服务。
+
 ### 3. Interceptor（拦截器）
 
 - **是什么**：在「调用 Controller 方法前后」插入逻辑，可修改请求/响应、记录耗时、统一包装返回结构等；基于 RxJS，可写 `next.handle().pipe(...)`。
