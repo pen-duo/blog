@@ -24,6 +24,14 @@ export const projects: Project[] = [
     tags: ['opensource'],
     type: 'tool',
   },
+  {
+    title: 'Unlock X',
+    description: '一个面向 X 账号申诉场景的 AI 产品，提供智能诊断、申诉文案生成与一键化申诉辅助能力，帮助用户更高效地完成账号恢复流程',
+    preview: '/img/project/unlock-x.png',
+    website: 'https://www.xunlock.cn/',
+    tags: ['ai', 'product', 'personal'],
+    type: 'web',
+  },
 ]
 
 export type Tag = {
