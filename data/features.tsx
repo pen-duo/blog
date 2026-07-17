@@ -32,7 +32,7 @@ const FEATURES: FeatureItem[] = [
     }),
     description: (
       <Translate>
-        在香港知名上市Web3交易所担任高级前端工程师，拥有丰富的Web3金融交易系统开发经验。懂点区块链技术、DeFi协议和加密货币交易系统架构设计。
+        具备 Agent 与 AI 应用工程化实战经验，熟悉前端产品落地、交互体验设计，以及从工具调用到工作流编排的应用开发实践。
       </Translate>
     ),
     header: <SpiderSvg className="h-auto w-full" height={150} role="img" />,
