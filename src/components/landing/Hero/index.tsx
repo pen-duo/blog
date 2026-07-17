@@ -43,7 +43,7 @@ function Name() {
       <h1 className="hero__title">
         <Translate id="homepage.hero.greet">你好! 我是</Translate>
         <span className={styles.name}>
-          <Translate id="homepage.hero.name">Jimmy</Translate>
+          <Translate id="homepage.hero.name">agentbangbang</Translate>
         </span>
       </h1>
       <span className="ml-1">👋</span>

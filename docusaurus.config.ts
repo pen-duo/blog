@@ -8,7 +8,7 @@ const beian = '闽ICP备2020017848号-3'
 const beian1 = '闽公网安备35021102000847号'
 
 const config: Config = {
-  title: 'Jimmy\'s Blog',
+  title: 'agentbangbang\'s Blog',
   tagline: 'Road To Coding',
   favicon: 'img/favicon.ico',
   url: 'https://blog.kuizuo.me',
@@ -29,7 +29,7 @@ const config: Config = {
     metadata: [
       {
         name: 'author',
-        content: 'Jimmy',
+        content: 'agentbangbang',
       },
       {
         name: 'keywords',
@@ -42,9 +42,9 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'Jimmy\'s Blog',
+      title: 'agentbangbang\'s Blog',
       logo: {
-        alt: 'Jimmy\'s Blog',
+        alt: 'agentbangbang\'s Blog',
         src: 'img/logo.webp',
         srcDark: 'img/logo.webp',
       },
@@ -102,7 +102,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Jimmy Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
+      copyright: `Copyright © ${new Date().getFullYear()} agentbangbang Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
     },
     algolia: {
       appId: 'GV6YN1ODMO',

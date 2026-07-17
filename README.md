@@ -1,4 +1,4 @@
-# Jimmy's Blog
+# agentbangbang's Blog
 
 基于 Docusaurus 构建的个人博客网站
 

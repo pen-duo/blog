@@ -199,7 +199,7 @@ function createLocalCoverDirectory() {
   </defs>
   <rect width="1200" height="630" fill="url(#grad1)" />
   <text x="600" y="315" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" dominant-baseline="middle">
-    Jimmy's Blog
+    agentbangbang's Blog
   </text>
 </svg>
 `

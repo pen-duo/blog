@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 console.log(`
-🎉 Jimmy's Blog - 智能文章管理系统
+🎉 agentbangbang's Blog - 智能文章管理系统
 
 📝 创建文章：
   pnpm new                    - 交互式创建文章（推荐）

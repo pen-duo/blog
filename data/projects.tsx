@@ -1,6 +1,6 @@
 export const projects: Project[] = [
   {
-    title: 'Jimmy的个人博客',
+    title: 'agentbangbang\'s Blog',
     description: '基于Docusaurus v3 静态网站生成器实现个人博客',
     preview: '/img/project/blog.png',
     website: '',

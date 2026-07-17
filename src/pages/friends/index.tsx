@@ -11,7 +11,7 @@ import styles from './styles.module.css'
 const TITLE = '友链'
 const DESCRIPTION = '有很多良友，胜于有很多财富。'
 const ADD_FRIEND_URL = 'https://github.com/pen-duo/blog/edit/main/data/friends.tsx'
-const SITE_INFO = `title: 'Jimmy的博客'
+const SITE_INFO = `title: 'agentbangbang's Blog'
 description: 'Road To Coding'
 website: ''
 avatar: '/img/logo.png'`
